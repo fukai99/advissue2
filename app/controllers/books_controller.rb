@@ -4,6 +4,8 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book_new = Book.new
     @user = @book.user
+    @book_comment = BookComment.new
+    @book_comments = @book.book_comments.all
   end
 
   def index
@@ -33,7 +35,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    
+
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "You have updated book successfully."
     else
