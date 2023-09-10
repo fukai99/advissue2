@@ -1,4 +1,4 @@
-<% book_comments.each do |comment| %>
+<% book.book_comments.each do |comment| %>
       <%= image_tag comment.user.get_profile_image %>
       <%= comment.user.name %>
       <%= comment.comment %>
@@ -10,4 +10,4 @@
       <%= f.label :comment %>
       <%= f.text_area :comment %>
       <%= f.submit %>
-      <% end %>
+      <% end %>_

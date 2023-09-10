@@ -23,21 +23,23 @@
 
             <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
           <% end %>
-          
-          
+
+
           <!-- id入れる 何入れて良いのかわからない-->
-          <td id="favorite_buttons_<%= @book.id %>" >
+          <div id="favorite_buttons_<%= @book.id %>" >
           <!-- 部分テンプレート入れる-->
-          <%= render 'favorites/btn', book: @book%>
+          <%= render 'favorites/btn', book: @book %>
+          </div>
         </tr>
       </table>
-      
+
       <!-- id入れる 何入れて良いのかわからない-->
-      <td id="comment_buttons_<%= @book.id %>" >
+      <div id="comment_form" >
       <!-- commentの部分テンプレート入れる -->
-      <%= render 'book_comments/comment', book_comments: @book_comments, book: @book%>
-      
-      
+      <%= render 'book_comments/comment', book_comment: @book_comment, book: @book %>
+      </div>
+
+
     </div>
   </div>
 </div>
